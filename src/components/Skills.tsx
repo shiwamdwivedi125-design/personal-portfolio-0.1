@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Layout, Server, Database, Code } from 'lucide-react';
+import { Layout, Server, Database, Code, Wrench } from 'lucide-react';
 import { skillCategories } from '@/data/portfolio';
 
 const iconMap: Record<string, typeof Layout> = {
@@ -7,6 +7,7 @@ const iconMap: Record<string, typeof Layout> = {
   server: Server,
   database: Database,
   code: Code,
+  tools: Wrench,
 };
 
 export default function Skills() {
@@ -30,9 +31,6 @@ export default function Skills() {
 
       <div className="relative max-w-6xl mx-auto px-6" ref={ref}>
         <div className="text-center mb-16">
-          <p className="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-2">
-            What I bring to the table
-          </p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             My <span className="text-cyan-400">Skills</span>
           </h2>

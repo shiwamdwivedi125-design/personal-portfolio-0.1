@@ -21,9 +21,6 @@ export default function Projects() {
 
       <div className="relative max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
-          <p className="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-2">
-            My work
-          </p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Featured <span className="text-cyan-400">Projects</span>
           </h2>

@@ -8,9 +8,6 @@ export default function About() {
 
       <div className="relative max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-2">
-            Get to know me
-          </p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             About <span className="text-cyan-400">Me</span>
           </h2>

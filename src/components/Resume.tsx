@@ -11,9 +11,6 @@ export default function Resume() {
 
       <div className="relative max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-2">
-            My credentials
-          </p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             <span className="text-cyan-400">Resume</span>
           </h2>

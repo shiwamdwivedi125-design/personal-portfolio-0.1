@@ -9,22 +9,29 @@ export const profile = {
     {
       degree: 'B.Tech in Computer Science',
       institution: 'Pursuing',
-      year: '2022 - 2026',
+      year: '2023 - 2027',
       description:
         'Studying core computer science subjects including Data Structures, Algorithms, DBMS, Operating Systems, and Software Engineering.',
     },
     {
       degree: 'Higher Secondary (12th)',
       institution: 'Completed',
-      year: '2021 - 2022',
+      year: '2021 - 2023',
       description:
         'Completed higher secondary education with a focus on Science (PCM) and Computer Science fundamentals.',
     },
+    {
+      degree: 'High School',
+      institution: 'Completed',
+      year: '2021',
+      description: 'Completed high school education in 2021.',
+    },
   ],
-  github: 'https://github.com/shiwamdwivedi',
-  linkedin: 'https://www.linkedin.com/in/shiwamdwivedi',
+  github: 'https://github.com/shiwamdwivedi125-design',
+  linkedin: 'https://www.linkedin.com/in/shiwam-dwivedi-82ba15340',
+  instagram: 'https://www.instagram.com/shiwamdwivedi96?igsh=aG1qajcwbTYzam9k',
   email: 'shiwamdwivedi@gmail.com',
-  phone: '+91 XXXXX XXXXX',
+  phone: '8340119050',
   location: 'India',
 };
 
@@ -45,6 +52,7 @@ export const skillCategories: SkillCategory[] = [
       { name: 'React', level: 85 },
       { name: 'Vite', level: 80 },
       { name: 'Tailwind CSS', level: 88 },
+      { name: 'Hono', level: 80 },
     ],
   },
   {
@@ -54,8 +62,8 @@ export const skillCategories: SkillCategory[] = [
       { name: 'Node.js', level: 82 },
       { name: 'Express.js', level: 80 },
       { name: 'Python', level: 85 },
-      { name: 'Django', level: 70 },
-      { name: 'Spring Boot', level: 65 },
+      { name: 'Django', level: 60 },
+      { name: 'Spring Boot', level: 60 },
     ],
   },
   {
@@ -63,8 +71,18 @@ export const skillCategories: SkillCategory[] = [
     icon: 'database',
     skills: [
       { name: 'MongoDB', level: 82 },
-      { name: 'MySQL', level: 78 },
+      { name: 'MySQL', level: 50 },
       { name: 'PostgreSQL', level: 70 },
+    ],
+  },
+  {
+    title: 'Tools',
+    icon: 'tools',
+    skills: [
+      { name: 'GitHub', level: 80 },
+      { name: 'Git', level: 80 },
+      { name: 'VS Code', level: 80 },
+      { name: 'IntelliJ IDEA', level: 80 },
     ],
   },
   {
@@ -90,6 +108,22 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    title: 'AgriMitra',
+    description:
+      'An all-in-one agriculture platform that connects local product and service purchasing with personalized farm planning, helping farmers plan crops, estimate requirements and expenses, and get AI-based assistance.',
+    image:
+      'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80',
+    technologies: ['Farm Planning', 'AI Assistance', 'Agri-commerce'],
+    github: 'https://github.com/shiwamdwivedi125-design/AgriMitra-Farmer0.1',
+    demo: 'https://agrimitra-farmer0-1.onrender.com/',
+    features: [
+      'Personalized crop planning',
+      'Calculate farm requirements and expenses',
+      'AI-based agricultural assistance',
+      'Access local agricultural products and services',
+    ],
+  },
   {
     title: 'Dharti Ka Swad',
     description:

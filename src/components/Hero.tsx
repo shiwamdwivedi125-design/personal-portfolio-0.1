@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ArrowDown, Github, Linkedin, Mail, Download } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Instagram, Mail, Download } from 'lucide-react';
 import { profile } from '@/data/portfolio';
 
 export default function Hero() {
@@ -25,8 +25,8 @@ export default function Hero() {
     document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const scrollToContact = () => {
-    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToResume = () => {
+    document.querySelector('#resume')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -45,15 +45,6 @@ export default function Hero() {
       <div className="absolute inset-0 bg-grid-pattern opacity-20" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <div
-          className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 transition-all duration-700 ${
-            mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
-        >
-          <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-          <span className="text-sm text-slate-300">Available for opportunities</span>
-        </div>
-
         <h1
           className={`text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-4 tracking-tight transition-all duration-700 delay-100 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -99,7 +90,7 @@ export default function Hero() {
             View My Projects
           </button>
           <button
-            onClick={scrollToContact}
+            onClick={scrollToResume}
             className="px-8 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-white/10 hover:scale-105 transition-all duration-300 flex items-center gap-2"
           >
             <Download className="w-4 h-4" />
@@ -116,6 +107,7 @@ export default function Hero() {
             href={profile.github}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="GitHub"
             className="w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 hover:scale-110 transition-all duration-300"
           >
             <Github className="w-5 h-5" />
@@ -124,9 +116,19 @@ export default function Hero() {
             href={profile.linkedin}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="LinkedIn"
             className="w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 hover:scale-110 transition-all duration-300"
           >
             <Linkedin className="w-5 h-5" />
+          </a>
+          <a
+            href={profile.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 hover:scale-110 transition-all duration-300"
+          >
+            <Instagram className="w-5 h-5" />
           </a>
           <a
             href={`mailto:${profile.email}`}

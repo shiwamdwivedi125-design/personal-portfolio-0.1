@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Send, Mail, MapPin, Phone, Github, Linkedin, CheckCircle, AlertCircle, Loader } from 'lucide-react';
+import { Send, Mail, MapPin, Phone, Github, Linkedin, Instagram, CheckCircle, AlertCircle, Loader } from 'lucide-react';
 import { profile } from '@/data/portfolio';
 import { supabase } from '@/lib/supabase';
 
@@ -34,6 +34,16 @@ export default function Contact() {
       return;
     }
 
+    // If supabase is not configured, show a friendly message instead of calling API.
+    if (!supabase) {
+      setStatus('error');
+      setErrorMsg(
+        'Contact form is not configured on this environment. Please email me at ' +
+          profile.email
+      );
+      return;
+    }
+
     try {
       const { error } = await supabase.from('contact_messages').insert({
         name: form.name,
@@ -47,7 +57,8 @@ export default function Contact() {
       setStatus('success');
       setForm({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => setStatus('idle'), 5000);
-    } catch {
+    } catch (err) {
+      console.error('Contact submit error:', err);
       setStatus('error');
       setErrorMsg('Something went wrong. Please try again or email me directly.');
     }
@@ -59,9 +70,6 @@ export default function Contact() {
 
       <div className="relative max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-2">
-            Get in touch
-          </p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Contact <span className="text-cyan-400">Me</span>
           </h2>
@@ -101,6 +109,7 @@ export default function Contact() {
                 href={profile.github}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub"
                 className="w-11 h-11 rounded-full bg-slate-950/50 border border-white/10 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 hover:scale-110 transition-all"
               >
                 <Github className="w-5 h-5" />
@@ -109,9 +118,19 @@ export default function Contact() {
                 href={profile.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
                 className="w-11 h-11 rounded-full bg-slate-950/50 border border-white/10 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 hover:scale-110 transition-all"
               >
                 <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href={profile.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="w-11 h-11 rounded-full bg-slate-950/50 border border-white/10 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 hover:scale-110 transition-all"
+              >
+                <Instagram className="w-5 h-5" />
               </a>
             </div>
           </div>
